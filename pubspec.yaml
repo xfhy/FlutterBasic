@@ -17,10 +17,20 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  # 跨组件传递消息
   event_bus: 1.1.0
+  # 格式化时间的
   date_format: 1.0.6
+  # http网络请求库
   http: ^0.12.0+4
+  # 方便的网络请求库
   dio: ^3.0.9
+  # 文件存储
+  path_provider: ^1.6.4
+  # sp
+  shared_preferences: ^0.5.6+2
+  # sqlite
+  sqflite: ^1.2.1
   flutter:
     sdk: flutter
 
