@@ -19,6 +19,8 @@ environment:
 dependencies:
   event_bus: 1.1.0
   date_format: 1.0.6
+  http: ^0.12.0+4
+  dio: ^3.0.9
   flutter:
     sdk: flutter
 
