@@ -105,10 +105,12 @@ class _MyHomePageState extends State<MyHomePage> {
       await db.insert(
         'students',
         std.toJson(),
+        //插入冲突策略，新的替换旧的
         conflictAlgorithm: ConflictAlgorithm.replace,
       );
     }
 
+    //插入3个
     await insertStudent(student1);
     await insertStudent(student2);
     await insertStudent(student3);
@@ -119,7 +121,9 @@ class _MyHomePageState extends State<MyHomePage> {
       return List.generate(maps.length, (i) => Student.fromJson(maps[i]));
     }
 
+    ////读取出数据库中插入的Student对象集合
     students().then((list) => list.forEach((s) => print(s.name)));
+    //释放数据库资源
     final Database db = await database;
     db.close();
   }
