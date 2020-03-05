@@ -6,6 +6,7 @@ import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugins.GeneratedPluginRegistrant
 
+
 class MainActivity : FlutterActivity() {
 
     override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
@@ -25,5 +26,16 @@ class MainActivity : FlutterActivity() {
                 print("fail")
             }
         }
+
+
+        registerViewFactory(flutterEngine)
     }
+
+    private fun registerViewFactory(flutterEngine: FlutterEngine) {
+        flutterEngine.platformViewsController.registry.registerViewFactory("sampleView",SampleViewFactory(flutterEngine.dartExecutor))
+    }
+
+    //Adding a Flutter screen to an Android app
+    //https://flutter.dev/docs/development/add-to-app/android/add-flutter-screen
+
 }
