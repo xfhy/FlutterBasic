@@ -31,6 +31,8 @@ dependencies:
   shared_preferences: ^0.5.6+2
   # sqlite
   sqflite: ^1.2.1
+  # 提供数据的框架,提供依赖注入 实际是InheritedWidget
+  provider: ^4.0.4
   flutter:
     sdk: flutter
 
